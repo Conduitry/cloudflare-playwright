@@ -1,5 +1,10 @@
 import { firefox } from 'playwright-core';
 
+if (process.argv.length !== 3) {
+	console.log('Usage: <hostname>');
+	process.exit(1);
+}
+
 const browser = await firefox.launch();
 const context = await browser.newContext();
 const page = await context.newPage();
