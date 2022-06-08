@@ -1,4 +1,4 @@
-import { firefox } from 'playwright';
+import { firefox } from 'playwright-core';
 
 const browser = await firefox.launch();
 const context = await browser.newContext();
