@@ -5,7 +5,7 @@ if (process.argv.length !== 3) {
 	process.exit(1);
 }
 
-const browser = await firefox.launch({ headless: false });
+const browser = await firefox.launch({ headless: !process.env.DISPLAY });
 browser.on('disconnected', () => process.exit(1));
 const context = await browser.newContext();
 const page = await context.newPage();
