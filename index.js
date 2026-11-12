@@ -19,5 +19,5 @@ while (!cf_clearance) {
 	await new Promise(res => setTimeout(res, 100));
 	cf_clearance = (await context.cookies()).find(({ name }) => name === 'cf_clearance');
 }
-console.log(JSON.stringify({ headers: { cookie: `cf_clearance=${cf_clearance.value}`, 'user-agent': user_agent } }));
+console.log(JSON.stringify({ cookie: `cf_clearance=${cf_clearance.value}`, 'user-agent': user_agent }));
 process.exit(0);
